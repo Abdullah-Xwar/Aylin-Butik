@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYLİN BUTİK | Kestel Lüks Kadın Giyim & Moda</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        ruby: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                            800: '#9f1239',
+                            900: '#881337',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        shimmer: {
+                            '100%': { transform: 'translateX(100%)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 15px rgba(225, 29, 72, 0.2)' },
+                            '100%': { boxShadow: '0 0 30px rgba(225, 29, 72, 0.6)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #fafafa; }
+        ::-webkit-scrollbar-thumb { background: #e11d48; border-radius: 99px; }
+        ::-webkit-scrollbar-thumb:hover { background: #be123c; }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .hero-pattern {
+            background-image: radial-gradient(rgba(225, 29, 72, 0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .hover-card-rise {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-card-rise:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(225, 29, 72, 0.15);
+        }
+
+        .shimmer-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: all 0.6s;
+        }
+        .shimmer-btn:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white text-zinc-900 font-sans antialiased selection:bg-ruby-600 selection:text-white">
+
+    <!-- TOP TICKER BAR -->
+    <div class="bg-zinc-950 text-white text-xs py-2.5 px-4 font-medium tracking-wide">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                <span class="font-bold text-emerald-400">ŞU AN AÇIK</span>
+                <span class="text-zinc-400">| Kapanış Saati: 18:30</span>
+            </div>
+            <div class="hidden sm:flex items-center gap-6 text-zinc-300">
+                <span><i class="fa-solid fa-location-dot text-ruby-500 mr-1.5"></i>Kestel / Bursa</span>
+                <span><i class="fa-solid fa-phone text-ruby-500 mr-1.5"></i>0535 849 06 27</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 glass-header border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-2xl bg-zinc-950 text-white flex items-center justify-center font-extrabold text-xl shadow-lg border border-ruby-600/30 group-hover:border-ruby-600 transition-colors">
+                        <span class="text-ruby-500">A</span>B
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-tight text-zinc-950 block leading-none">AYLİN BUTİK</span>
+                        <span class="text-[10px] font-bold tracking-widest text-ruby-600 uppercase block mt-1">Kestel Kadın Giyim</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="#hakkimizda" class="text-zinc-600 hover:text-ruby-600 transition-colors">Hakkımızda</a>
+                    <a href="#koleksiyon" class="text-zinc-600 hover:text-ruby-600 transition-colors">Koleksiyonlar</a>
+                    <a href="#yorumlar" class="text-zinc-600 hover:text-ruby-600 transition-colors">Değerlendirmeler</a>
+                    <a href="#konum" class="text-zinc-600 hover:text-ruby-600 transition-colors">Konum & Harita</a>
+                </nav>
+
+                <!-- Quick Action Buttons -->
+                <div class="flex items-center gap-3">
+                    <a href="https://wa.me/905358490627?text=Merhaba,%20Ayl%C4%B1n%20Butik%20ürünleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-all shadow-md shadow-emerald-600/20 active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span>WhatsApp Sipariş</span>
+                    </a>
+                    <a href="tel:05358490627" class="shimmer-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-ruby-600 hover:bg-ruby-700 text-white text-xs font-bold transition-all shadow-lg shadow-ruby-600/30 active:scale-95">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0535 849 06 27</span>
+                    </a>
+                    <!-- Mobile Hamburger -->
+                    <button id="mobile-toggle" class="md:hidden p-2 text-zinc-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-drawer" class="hidden md:hidden bg-white border-b border-zinc-200 px-6 py-4 space-y-3">
+            <a href="#hakkimizda" class="block py-2 text-sm font-bold text-zinc-800 border-b border-zinc-100">Hakkımızda</a>
+            <a href="#koleksiyon" class="block py-2 text-sm font-bold text-zinc-800 border-b border-zinc-100">Koleksiyonlar</a>
+            <a href="#yorumlar" class="block py-2 text-sm font-bold text-zinc-800 border-b border-zinc-100">Değerlendirmeler</a>
+            <a href="#konum" class="block py-2 text-sm font-bold text-zinc-800">Konum & Harita</a>
+            <div class="pt-2">
+                <a href="https://wa.me/905358490627?text=Merhaba,%20ürünleriniz%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>WhatsApp Hattı</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative hero-pattern py-16 md:py-24 overflow-hidden border-b border-zinc-100">
+        <!-- Ambient Red Glow Spheres -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-ruby-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <!-- Store Tag Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ruby-50 border border-ruby-200 text-ruby-700 text-xs font-bold animate-float">
+                        <i class="fa-solid fa-crown text-ruby-600"></i>
+                        <span>Kestel'in En Prestijli Kadın Giyim Mağazası</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-4xl sm:text-6xl font-extrabold text-zinc-950 tracking-tight leading-[1.1]">
+                        Modada Zarafeti <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-ruby-600 via-ruby-700 to-zinc-950">Aylın Butik</span> İle Keşfedin
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-zinc-600 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Kestel / Bursa’da şıklığın yeni adresi. En seçkin kabanlar, özel tasarım elbiseler ve zamansız kombin parçaları mağazamızda sizleri bekliyor.
+                    </p>
+
+                    <!-- Google Rating Badge -->
+                    <div class="p-4 bg-white/80 backdrop-blur-md rounded-2xl border border-zinc-200/80 shadow-xl inline-flex items-center gap-4 text-left max-w-xs mx-auto lg:mx-0">
+                        <div class="w-12 h-12 rounded-xl bg-zinc-950 text-white flex items-center justify-center font-black text-xl shadow-md">
+                            4.2
+                        </div>
+                        <div>
+                            <div class="flex text-amber-400 text-xs gap-0.5 mb-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <span class="text-xs font-bold text-zinc-900 block">Google Haritalar Puanı</span>
+                            <span class="text-[11px] text-zinc-500 font-medium">5 Gerçek Değerlendirme</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="https://wa.me/905358490627?text=Merhaba,%20Ayl%C4%B1n%20Butik%20yeni%20sezon%20koleksiyonunu%20öğrenmek%20istiyorum." target="_blank" class="w-full sm:w-auto shimmer-btn px-8 py-4 rounded-xl bg-ruby-600 hover:bg-ruby-700 text-white font-bold text-sm shadow-xl shadow-ruby-600/30 transition-all flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>WhatsApp İle İncele</span>
+                        </a>
+                        <a href="#konum" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg">
+                            <i class="fa-solid fa-map-pin text-ruby-500"></i>
+                            <span>Mağaza Adresi & Konum</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Hero Right Image Frame -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Red Glow Card Background -->
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-ruby-600 to-zinc-900 rounded-3xl opacity-25 blur-2xl"></div>
+                        
+                        <!-- Main Card -->
+                        <div class="relative bg-white p-3 rounded-3xl shadow-2xl border border-zinc-200">
+                            <div class="rounded-2xl overflow-hidden h-[460px] relative group">
+                                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Aylın Butik Kadın Giyim" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                
+                                <div class="absolute bottom-4 left-4 right-4 p-4 bg-zinc-950/90 backdrop-blur-md rounded-xl text-white border border-white/10 flex items-center justify-between">
+                                    <div>
+                                        <span class="text-[10px] font-bold uppercase tracking-widest text-ruby-400 block">Yeni Sezon</span>
+                                        <h3 class="font-bold text-sm">Kestel Butik Koleksiyonu</h3>
+                                    </div>
+                                    <span class="px-3 py-1 bg-ruby-600 text-white font-extrabold text-xs rounded-lg shadow-md">2025 Trend</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STORE HIGHLIGHTS / ABOUT -->
+    <section id="hakkimizda" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-ruby-600 font-extrabold text-xs uppercase tracking-widest block mb-2">Aylın Butik Ayrıcalığı</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-zinc-950">Neden Aylın Butik?</h2>
+                <div class="w-12 h-1 bg-ruby-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-3xl bg-zinc-50 border border-zinc-100 hover-card-rise">
+                    <div class="w-14 h-14 rounded-2xl bg-ruby-600 text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-ruby-600/30">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-950 mb-3">Kaliteli Kumaş ve İşçilik</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">
+                        Tüm koleksiyonlarımızda en kaliteli kumaş yapısına sahip, uzun ömürlü ve rahat parçalar tercih edilir.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-3xl bg-zinc-50 border border-zinc-100 hover-card-rise">
+                    <div class="w-14 h-14 rounded-2xl bg-zinc-950 text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-zinc-950/30">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-950 mb-3">Özel Kombin Danışmanlığı</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">
+                        Mağazamızda tarzınıza uygun en şık kombin alternatifleri güler yüzlü ekibimizle birlikte oluşturulur.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-3xl bg-zinc-50 border border-zinc-100 hover-card-rise">
+                    <div class="w-14 h-14 rounded-2xl bg-ruby-600 text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-ruby-600/30">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-zinc-950 mb-3">Zengin Ürün Çeşitliliği</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">
+                        Kaban, pardösü, elbise, takım ve aksesuarlarla aradığınız tüm kadın giyim parçaları tek adreste.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED COLLECTIONS GRID -->
+    <section id="koleksiyon" class="py-20 bg-zinc-50 border-y border-zinc-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-ruby-600 font-extrabold text-xs uppercase tracking-widest block mb-2">Öne Çıkanlar</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-zinc-950">Sezon Koleksiyonları</h2>
+                </div>
+                <p class="text-zinc-500 text-sm max-w-md mt-4 md:mt-0 font-normal">
+                    Kestel mağazamızda bulunan güncel modellerimizden bazı örnekler. Detaylı bilgi ve beden seçenekleri için WhatsApp'tan hemen yazabilirsiniz.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Product 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-zinc-200/80 hover-card-rise group">
+                    <div class="h-80 overflow-hidden relative bg-zinc-100">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80" alt="Kaban Modelleri" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-3 left-3 bg-zinc-950 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Favori Parça</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-zinc-950 text-base mb-1">Şık Kaban & Dış Giyim</h3>
+                        <p class="text-xs text-zinc-500 mb-4">Sıcak tutan kaşe ve özel dokulu kabanlar</p>
+                        <a href="https://wa.me/905358490627?text=Merhaba,%20Kaban%20ve%20D%C4%B1%C5%9F%20Giyim%20modelleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white font-bold text-xs transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>WhatsApp'tan Sor</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-zinc-200/80 hover-card-rise group">
+                    <div class="h-80 overflow-hidden relative bg-zinc-100">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80" alt="Elbise & Takım" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-3 left-3 bg-ruby-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Yeni Sezon</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-zinc-950 text-base mb-1">Özel Elbise & İkili Takım</h3>
+                        <p class="text-xs text-zinc-500 mb-4">Şık davetler ve özel günler için</p>
+                        <a href="https://wa.me/905358490627?text=Merhaba,%20Elbise%20ve%20Tak%C4%B1m%20modelleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white font-bold text-xs transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>WhatsApp'tan Sor</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-zinc-200/80 hover-card-rise group">
+                    <div class="h-80 overflow-hidden relative bg-zinc-100">
+                        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80" alt="Triko Kazak" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-zinc-950 text-base mb-1">Yumuşak Triko & Kazak</h3>
+                        <p class="text-xs text-zinc-500 mb-4">Günlük kullanım için konforlu trikolar</p>
+                        <a href="https://wa.me/905358490627?text=Merhaba,%20Triko%20ve%20Kazak%20modelleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white font-bold text-xs transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>WhatsApp'tan Sor</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-zinc-200/80 hover-card-rise group">
+                    <div class="h-80 overflow-hidden relative bg-zinc-100">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="Alt Giyim & Kombin" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-zinc-950 text-base mb-1">Pantolon & Etek Kombinleri</h3>
+                        <p class="text-xs text-zinc-500 mb-4">Modern kesim rahat ve şık parçalar</p>
+                        <a href="https://wa.me/905358490627?text=Merhaba,%20Pantolon%20ve%20Etek%20modelleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white font-bold text-xs transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>WhatsApp'tan Sor</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section id="yorumlar" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-zinc-950 via-zinc-900 to-black rounded-3xl p-8 md:p-14 text-white shadow-2xl relative overflow-hidden border border-zinc-800">
+                
+                <div class="absolute top-0 right-0 w-96 h-96 bg-ruby-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                    
+                    <!-- Left Rating Overview -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-ruby-400">
+                            <i class="fa-brands fa-google text-sm"></i>
+                            <span>Google Müşteri Yorumları</span>
+                        </div>
+                        <div class="flex items-baseline gap-4">
+                            <span class="text-6xl font-black text-white">4.2</span>
+                            <div>
+                                <div class="flex text-amber-400 text-base gap-1 mb-1">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="text-xs text-zinc-400 font-medium">5 Yorum Üzerinden</span>
+                            </div>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Aylın Butik olarak Kestel'deki mağazamızda müşterilerimizin %100 memnuniyeti için çalışıyoruz.
+                        </p>
+                    </div>
+
+                    <!-- Right Review Cards -->
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="font-bold text-sm text-white">Nuray A.</span>
+                                <div class="flex text-amber-400 text-xs gap-0.5">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-xs text-zinc-300 leading-relaxed italic">
+                                "Kestel'de kaliteli ve tarz kıyafet bulmak zordu, Aylın Butik imdadımıza yetişti. Güler yüzlü yaklaşımınız için teşekkürler!"
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="font-bold text-sm text-white">Selin K.</span>
+                                <div class="flex text-amber-400 text-xs gap-0.5">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-xs text-zinc-300 leading-relaxed italic">
+                                "Kaban koleksiyonu muazzam. Kumaş kalitesi harika. Herkese tavsiye ediyorum."
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP & LOCATION SECTION (COMPLETELY REDESIGNED & ULTRA MODERN) -->
+    <section id="konum" class="py-20 bg-zinc-50 border-t border-zinc-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-ruby-600 font-extrabold text-xs uppercase tracking-widest block mb-2">Harita ve Adres</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-zinc-950">Mağazamıza Yol Tarifi Alın</h2>
+                <div class="w-12 h-1 bg-ruby-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                
+                <!-- Left Detail Cards -->
+                <div class="lg:col-span-5 space-y-4 flex flex-col justify-between">
+                    
+                    <!-- Address Card -->
+                    <div class="p-6 bg-white rounded-2xl border border-zinc-200 shadow-sm flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-ruby-50 text-ruby-600 flex items-center justify-center text-xl shrink-0 font-bold">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-zinc-950 text-base mb-1">Açık Adresimiz</h3>
+                            <p class="text-sm text-zinc-600 leading-relaxed">
+                                Vanimehmet, İtfaiye Sk. no12, 16450 Kestel/Bursa
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div class="p-6 bg-white rounded-2xl border border-zinc-200 shadow-sm flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-ruby-50 text-ruby-600 flex items-center justify-center text-xl shrink-0 font-bold">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-zinc-950 text-base mb-1">Telefon Numarası</h3>
+                            <a href="tel:05358490627" class="text-lg font-black text-ruby-600 hover:text-ruby-700 transition-colors">
+                                0535 849 06 27
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Contact Card -->
+                    <div class="p-6 bg-emerald-50 border border-emerald-200 rounded-2xl shadow-sm flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-2xl shrink-0 font-bold">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-emerald-950 text-base mb-1">WhatsApp İletişim Hattı</h3>
+                            <p class="text-xs text-emerald-800 mb-3">Model sorgusu ve sipariş için anında iletişime geçin.</p>
+                            <a href="https://wa.me/905358490627?text=Merhaba,%20Ayl%C4%B1n%20Butik%20ürünleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition-all">
+                                <span>WhatsApp'tan Yazın</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Working Hours Card -->
+                    <div class="p-6 bg-white rounded-2xl border border-zinc-200 shadow-sm flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-zinc-950 text-white flex items-center justify-center text-xl shrink-0 font-bold">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-zinc-950 text-base mb-1">Çalışma Saatleri</h3>
+                            <div class="flex items-center gap-2 text-xs font-bold text-emerald-600 mb-1">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                                <span>AÇIK</span>
+                            </div>
+                            <p class="text-xs text-zinc-500">Kapanış Saati: <strong class="text-zinc-900">18:30</strong></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Styled Map View -->
+                <div class="lg:col-span-7 bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl relative border-4 border-white min-h-[440px] flex flex-col justify-between">
+                    
+                    <!-- Map Header Badge Overlay -->
+                    <div class="absolute top-4 left-4 right-4 z-10 flex items-center justify-between bg-zinc-950/90 backdrop-blur-md p-3 px-5 rounded-2xl border border-white/10 text-white shadow-xl">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-3 h-3 rounded-full bg-ruby-600 animate-ping"></span>
+                            <span class="text-xs font-bold tracking-wide">AYLİN BUTİK • KESTEL MAĞAZASI</span>
+                        </div>
+                        <a href="https://maps.google.com/?q=Vanimehmet+İtfaiye+Sk+no12+16450+Kestel+Bursa" target="_blank" class="px-3 py-1.5 rounded-xl bg-ruby-600 hover:bg-ruby-700 text-white text-xs font-bold transition-all shadow-md">
+                            <i class="fa-solid fa-diamond-turn-right mr-1"></i> Yol Tarifi
+                        </a>
+                    </div>
+
+                    <!-- Map Embed -->
+                    <iframe 
+                        title="Aylın Butik Kestel Harita Konumu" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.243570221375!2d29.213345!3d40.192345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca3f46f3455555%3A0x123456789abcdef!2sVanimehmet%2C%20%C4%B0tfaiye%20Sk.%20No%3A12%2C%2016450%20Kestel%2FBursa!5e0!3m2!1str!2str!4v1680000000000!5m2!1str!2str" 
+                        class="w-full h-full min-h-[440px] border-0 filter grayscale-[15%] contrast-[105%]">
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-950 text-white py-12 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-zinc-900">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-ruby-600 text-white flex items-center justify-center font-extrabold text-lg">
+                        AB
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-tight block">AYLİN BUTİK</span>
+                        <span class="text-[10px] text-zinc-400 uppercase tracking-widest block">Kestel / Bursa</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-6 text-xs text-zinc-400 font-medium">
+                    <a href="#hakkimizda" class="hover:text-ruby-500 transition-colors">Hakkımızda</a>
+                    <a href="#koleksiyon" class="hover:text-ruby-500 transition-colors">Koleksiyonlar</a>
+                    <a href="#yorumlar" class="hover:text-ruby-500 transition-colors">Değerlendirmeler</a>
+                    <a href="#konum" class="hover:text-ruby-500 transition-colors">Harita & Konum</a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+                <p>&copy; <span id="year"></span> AYLİN BUTİK. Tüm hakları saklıdır.</p>
+                <p>Kestel Kadın Giyim Mağazası • Bursa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING DUAL ACTION BUTTONS -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/905358490627?text=Merhaba,%20Ayl%C4%B1n%20Butik%20ürünleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" aria-label="WhatsApp" class="w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-2xl shadow-emerald-600/50 hover:bg-emerald-700 hover:scale-110 active:scale-95 transition-all">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        
+        <!-- Floating Call Button -->
+        <a href="tel:05358490627" aria-label="Telefon" class="w-14 h-14 rounded-full bg-ruby-600 text-white flex items-center justify-center text-xl shadow-2xl shadow-ruby-600/50 hover:bg-ruby-700 hover:scale-110 active:scale-95 transition-all">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const toggleBtn = document.getElementById('mobile-toggle');
+        const drawer = document.getElementById('mobile-drawer');
+
+        toggleBtn.addEventListener('click', () => {
+            drawer.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
